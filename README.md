@@ -5,14 +5,14 @@
 The customer browses the assortment of the e-store and fills the basket, after which he can place an order if he has enough funds in his account. The order is sent to the administrator for consideration, until the order is approved or rejected, the user can cancel it.
 
 # Users:
-1. Guest (unauthorized user)
+# 1. Guest (unauthorized user)
 Functionality:
 
     1. Catalog browsing
     2. Login/Register
     3. Changing language
     4. "Forgot password"
-2. User
+# 2. User
 The user has 3 statuses: ENABLE, BLOCKED, NOT CONFIRMED. After registration, the user receives the status NOT CONFIRMED, since he needs to confirm the registration by mail. ENABLE user can be blocked by the administrator, that is, get the BLOCKED status. You can successfully log in only with the ENABLE status.
 
 Functionality:
@@ -28,7 +28,7 @@ Functionality:
     9. Fill up balance
     10. Logout
     11. View order history
-3. Administrator
+# 3. Administrator
 The administrator fills the site with goods, changes their properties if necessary, reviews orders, manages users.
 
 Functionality:
