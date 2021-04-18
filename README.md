@@ -1,10 +1,10 @@
-E-store "RockStone"
-Study project for the course Java Web Development
-Author: Klimovich Sergei
-Description
+# E-store "RockStone"
+# Study project for the course Java Web Development
+# Author: Klimovich Sergei
+# Description
 The customer browses the assortment of the e-store and fills the basket, after which he can place an order if he has enough funds in his account. The order is sent to the administrator for consideration, until the order is approved or rejected, the user can cancel it.
 
-Users:
+# Users:
 1. Guest (unauthorized user)
 Functionality:
 
@@ -44,5 +44,5 @@ Functionality:
     9. Edit product
     10. Reject/produce orders
     11. Logout
-Objects: product, order, basket.
+# Objects: product, order, basket.
 The product has parameters such as title, price, facture, area of application. The shopping basket is a repository of goods that the user is going to purchase in the future. If there is the required amount of money, the user can send all the goods contained in the basket to the administrator in the form of an order for consideration. The order can be either approved, then the money will be debited from the buyer's account, or canceled.
