@@ -159,7 +159,7 @@ public class UserServiceImpl implements UserService {
 		try {
 			Cipher cipher = new Cipher();
 			String code = cipher.encrypt(user.getEmail());
-			MailSender sender = new MailSender(user.getEmail(), url, code + "&email=" + user.getEmail());
+			MailSender sender = new MailSender(user.getEmail(), url, user.getEmail());
 			sender.send();
 
 		} catch (SendMailException | NoSuchAlgorithmException e) {
