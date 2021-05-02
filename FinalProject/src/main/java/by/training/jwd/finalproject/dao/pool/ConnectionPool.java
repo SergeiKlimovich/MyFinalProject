@@ -2,7 +2,9 @@ package by.training.jwd.finalproject.dao.pool;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -95,6 +97,50 @@ public class ConnectionPool {
 			logger.log(Level.ERROR, "Connection was not deleted", e);
 		} catch (InterruptedException e) {
 			logger.log(Level.ERROR, "Thread was interrupted", e);
+		}
+	}
+
+	/**
+	 * Close Connection.
+	 */
+
+	public void closeConnection(Connection connection, Statement statement, ResultSet... resultSets) {
+		try {
+			if (resultSets.length != 0) {
+				for (ResultSet resultSet : resultSets) {
+					resultSet.close();
+				}
+			}
+		} catch (SQLException e) {
+			logger.log(Level.ERROR, "ResultSet hasn't closed", e);
+		}
+		try {
+			if (statement != null) {
+				statement.close();
+			}
+		} catch (SQLException e) {
+			logger.log(Level.ERROR, "Statement hasn't closed", e);
+		}
+		try {
+			if (connection != null) {
+				connection.close();
+			}
+		} catch (SQLException e) {
+			logger.log(Level.ERROR, "Connection hasn't returned to the pool", e);
+		}
+	}
+
+	/**
+	 * Close Connection.
+	 */
+
+	public void closeConnection(Connection connection) {
+		try {
+			if (connection != null) {
+				connection.close();
+			}
+		} catch (SQLException e) {
+			logger.log(Level.ERROR, "Connection hasn't returned to the pool", e);
 		}
 	}
 
