@@ -16,7 +16,7 @@
 		<Console name="Console" target="SYSTEM_OUT">
 			<PatternLayout pattern="${pattern_console}" />
 		</Console>
-		<RollingFile name="File" fileName="D:\MyFinalProject.18.04\FinalProject\logs\log_roll.txt"
+		<RollingFile name="File" fileName="D:\MyFinalProject.25.04\MyFinalProject\FinalProject\logs\log_roll.txt"
 			append="true"
 			filePattern="log/${date:yyyy-MM-dd}/%d{yyyy-MM-dd_HH-mm}_%i.log">
 			<PatternLayout pattern="${pattern_file}" />
